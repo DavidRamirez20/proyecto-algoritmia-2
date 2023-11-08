@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/main.css">
+  </head>
+  <body>
+    <header>
+      <h1>Gear Calculator</h3>
+      <div id="inputUser">
+        <section>
+          <table id="modules">
+            <tr>
+              <th colspan="3">Módulos</th>
+            </tr>
+            <tr>
+              <th colspan="3">Series</th>
+            </tr>
+            <tr>
+                <th>I</th>
+                <th>II</th>
+                <th>III</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1,125</td>
+                <td>3,25</td>
+            </tr>
+            <tr>
+                <td>1,25</td>
+                <td>1,375</td>
+                <td>3,75</td>
+            </tr>
+            <tr>
+                <td>1,5</td>
+                <td>1,75</td>
+                <td>5,5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2,25</td>
+            </tr>
+            <tr>
+                <td>2,5</td>
+                <td>2,75</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>3,5</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>4,5</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>5,5</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>16</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>20</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>25</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>32</td>
+              <td>28</td>
+            </tr>
+            <tr>
+              <td>40</td>
+              <td>45</td>
+            </tr>
+            <tr>
+              <td>50</td>
+            </tr>
+          </table>
+        </section>
+        <section id="dataUs">
+          <h2>Ingrese los Siguientes Datos</h2>
+          <form action="/calc-gear" method="POST">
+            <label for="input1">
+              Módulo:
+              <abbr title="El módulo es el grosor de los dientes de un engranaje.">(<span>?</span>)</abbr>
+              <br>
+              <input type="number" min="1" step="0.001" max="50" id="input1" name="input1" placeholder="1.5" required><br><br>
+            </label>
+            <label for="input2">
+              Número de Dientes:
+              <br>
+              <input type="number" min="1" id="input2" name="input2" placeholder="15" required><br><br>
+            </label>
+            <label for="input3">
+              Material:
+              <br>
+              <select id="input3" name="input3">
+                <option disabled selected hidden>Por favor seleccione</option> 
+                <option value="x">X</option>
+                <option value="y">Y</option>
+                <option value="z">Z</option>
+              </select>
+            </label>
+            </label><br>
+            <button>Calcular</button>
+          </form>
+        </section>
+      </div>
+    </header>
+    <main>
+      <table id="datasheet">
+        <thead>
+          <tr>
+            <th>CARACTERÍSTICA</th>
+            <th>VALOR [mm]</th>
+            <th>ESQUEMA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Adendum [a]</th>
+            <td>{{ resultado[0] }}</td>
+            <td rowspan="14">
+              <img src="/static/sketch_gear.png" />
+            </td>
+          </tr>
+          <tr>
+            <th>Dedendum [d]</th>
+            <td>{{ resultado[1] }}</td>
+          </tr>
+          <tr>
+            <th>Altura Diente [Ht]</th>
+            <td>{{ resultado[2] }}</td>
+          </tr>
+          <tr>
+            <th>Radio Pie - Diente [R]</th>
+            <td>{{ resultado[3] }}</td>
+          </tr>
+          <tr>
+            <th>Radio Cabeza - Diente [r]</th>
+            <td>{{ resultado[4] }}</td>
+          </tr>
+          <tr>
+            <th>Paso Circular [Pc]</th>
+            <td>{{ resultado[5] }}</td>
+          </tr>
+          <tr>
+            <th>Espesor Diente [e] </th>
+            <td>{{ resultado[6] }}</td>
+          </tr>
+          <tr>
+            <th>Vano Diente [v]</th>
+            <td>{{ resultado[7] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Primitivo - Piñon [dp]</th>
+            <td>{{ resultado[8] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Exterior - Piñon [de]</th>
+            <td>{{ resultado[9] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Interior - Piñon [di]</th>
+            <td>{{ resultado[10] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Primitivo - Rueda [Dp]</th>
+            <td>{{ resultado[11] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Exterior - Rueda [De]</th>
+            <td>{{ resultado[12] }}</td>
+          </tr>
+          <tr>
+            <th>Diámetro Interior - Rueda [Di]</th>
+            <td>{{ resultado[13] }}</td>
+          </tr>
+      </tbody>
+      </table>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

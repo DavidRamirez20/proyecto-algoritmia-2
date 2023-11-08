@@ -1,0 +1,134 @@
+body{
+   display: flex;
+   flex-direction: column;
+}
+
+header {
+   display: flex;
+   flex-direction: column;
+   background-color: #45503B;
+   padding-bottom: 20px;
+   border-radius: 20px 20px 20px 20px;
+}
+
+header h1 {
+   color: #37423D; 
+   text-align: center;
+   background-color: #9A8873;
+   border: 1px solid;
+   border-radius: 10px 10px 10px 10px;
+   box-shadow: 10px 5px 5px gray;
+   padding: 7px;
+   width: 80%;
+   align-self: center;
+}
+
+#inputUser {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+#modules {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 5px;
+   border-collapse: collapse;
+   background-color: #9A8873;
+   border-radius: 5px 5px 5px 5px;
+}
+
+
+th, td {
+   border-bottom: 1px solid black;
+   text-align: center;
+   padding: 5px;
+   border-radius: 10px 10px 10px 10px;
+}
+
+tr {
+   border: 1px solid;
+   align-items: center;
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+}
+
+h2 {
+   color:bisque;
+}
+
+label {
+   margin-bottom: 5px;
+   color:bisque;
+}
+
+input {
+   padding: 5px;
+   border-radius: 8px 8px 8px 8px;
+   width: 80%;
+}
+
+select {
+   padding: 5px;
+   border-radius: 8px 8px 8px 8px;
+   width: 84%;
+}
+
+select option {
+   padding: 5px;
+   border-radius: 8px 8px 8px 8px;
+}
+
+#dataUs {
+   border-top: 2px solid bisque;
+   border-bottom: 2px solid bisque;
+   padding-top: 5px;
+   padding-bottom: 30px;   
+   align-self: center;
+}
+
+main {
+   display: flex;
+   align-self: center;
+   background-color: #45503B;
+   padding: 20px;
+   margin-top: 10px;
+   border-radius: 20px 20px 20px 20px;
+   width: fit-content;
+}
+
+#datasheet {
+   padding: 10px;
+   margin: 10px;
+   border-collapse: collapse;
+   border-radius: 5px 5px 5px 5px;
+}
+
+#datasheet th,
+#datasheet td {
+   padding-right: 50px;
+   padding-left: 50px;
+   border-right: 1px solid black;
+   color: bisque;
+}
+
+img {
+   margin: 8px;
+   height: 450px;
+}
+
+button {
+   width: 50%;
+   padding: 10px;
+   border-radius: 8px 8px 8px 8px;
+   align-self: center;
+}
+
+button:hover {
+   background-color: antiquewhite;
+   transform: scale(1.03);
+}
