@@ -31,10 +31,13 @@ class Engranaje:
       result = self.resultado
       print(result)
       return result
+   
+gear = Engranaje(0, 0, 'X')
+resultado = Engranaje.modelado(gear) 
 
 @app.route("/")
 def index():
-   return render_template("index.html")
+   return render_template("index.html",gear=gear,resultado=resultado)
 
 @app.route("/calc-gear", methods=["GET", "POST"])
 def calc_gear():
@@ -50,7 +53,7 @@ def calc_gear():
       resultado = Engranaje.modelado(gear)
       print(resultado)
       
-      return render_template("index.html",gear=gear,resultado=resultado)
+      return render_template('index.html', gear=gear, resultado=resultado)
 
 if __name__=="__main__":
    app.run(debug=True)
