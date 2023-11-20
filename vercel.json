@@ -1,24 +1,17 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/main.py",
-        "functions": {
-          "main": {
-            "handler": "wsgi.handler",
-            "runtime": "python3.9"
-          }
-        }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api"
-      }
-    ],
-    "env": {
-      "PYTHONPATH": "src"
-    }
-  }
-  
+   "builds": [
+       {
+           "src": "api/main.py",
+           "use": "@vercel/python"
+       }
+   ],
+   "routes": [
+       {
+           "src": "/(.*)",
+           "dest": "api/main.py"
+       }
+   ],
+   "dependencies":{
+      "flask":"^2.1.3"
+   }
+}
