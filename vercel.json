@@ -11,7 +11,7 @@
            "dest": "api/main.py"
        }
    ],
-   "dependencies":{
+   "modules":{
       "flask":"^2.1.3"
    }
 }
